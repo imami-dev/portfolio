@@ -1,0 +1,323 @@
+/* ===== Сброс ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== База ===== */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff; /* ← белый фон */
+    color: #222;
+    line-height: 1.6;
+}
+
+/* контейнер */
+.container {
+    max-width: 850px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+/* ===== HERO ===== */
+.hero {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeUp 0.6s ease;
+}
+
+.hero h1 {
+    font-size: 44px;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #666;
+    margin: 10px 0 25px;
+}
+
+/* ===== Кнопка ===== */
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    padding: 14px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    background: #4f46e5;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ===== Карточки ===== */
+.card {
+    background: #f8fafc;
+    padding: 32px;
+    margin-bottom: 24px;
+    border-radius: 25px;
+     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    animation: fadeUp 0.6s ease;
+}
+
+.card h2 {
+    margin-bottom: 18px;
+}
+
+/* ===== Навыки В СТОЛБИК ===== */
+.skills-grid {
+    display: flex;
+
+    flex-direction: column; /* ← главное изменение */
+  gap: 10px;
+
+}
+
+.skill {
+    background: white;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    transition: 0.15s;
+}
+
+.skill:hover {
+    transform: translateX(6px);
+    border-color: #4f46e5;
+}
+
+/* ===== Контакты ===== */
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contacts a {
+    color: #4f46e5;
+    text-decoration: none;
+}
+
+.contacts a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Футер ===== */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #888;
+    font-size: 14px;
+}
+
+/* ===== Анимация ===== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .container {
+        margin: 30px auto;
+    }
+}
+.role {
+    font-size: 14px;
+    color: #555;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+main {
+    margin-top: 40px;
+}
+article {
+    margin-top: 16px;
+}
+article h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+/* ===== Navbar ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 14px 24px;
+}
+
+.nav-container {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #4f46e5;
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
+.theme-toggle:hover {
+  border-color: #4f46e5;
+}
+/* ===== Dark Mode ===== */
+body.dark {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark .navbar {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: #1e293b;
+}
+
+body.dark .nav-links a {
+  color: #e2e8f0;
+}
+
+body.dark .card {
+  background: #1e293b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .skill {
+  background: #0f172a;
+  border-color: #334155;
+}
+body.dark .skill:hover {
+  border-color: #4f46e5;
+}
+/* ===== Burger ===== */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.burger {
+  display: none; /* на десктопе скрыт */
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 7px 9px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.burger:hover {
+  border-color: #4f46e5;
+}
+
+.burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #222;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Анимация в крестик */
+.burger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== Мобилки ===== */
+@media (max-width: 600px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 61px; /* высота navbar */
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 24px;
+    gap: 16px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
+
+/* ===== Burger Dark Mode ===== */
+body.dark .burger {
+  border-color: #334155;
+}
+
+body.dark .burger span {
+  background: #e2e8f0;
+}
+
+body.dark .nav-links {
+  background: #0f172a;
+  border-color: #1e293b;
+}
+
